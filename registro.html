@@ -1,0 +1,210 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <style>
+    :root {
+      --bg: #0f0f0f;
+      --card-bg: #1a1a1a;
+      --primary: #00f0ff;
+      --accent: #ff00c8;
+      --glow: 0 0 10px var(--primary), 0 0 20px var(--accent);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: var(--bg);
+      color: white;
+    }
+    header {
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      box-shadow: 0 0 15px var(--primary);
+    }
+    header h1 {
+      font-size: 1.8em;
+      color: var(--primary);
+      text-shadow: var(--glow);
+    }
+    nav a {
+      color: var(--accent);
+      margin-left: 1.5em;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: white;
+    }
+    .hero {
+      text-align: center;
+      padding: 5em 2em;
+      background: linear-gradient(to right, #010203, #121212);
+    }
+    .hero h2 {
+      font-size: 2.8em;
+      color: var(--primary);
+      text-shadow: var(--glow);
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-top: 1em;
+      color: #ccc;
+    }
+    .form-container {
+      background: var(--card-bg);
+      border-radius: 15px;
+      max-width: 520px;
+      margin: 3em auto;
+      padding: 2em;
+      box-shadow: var(--glow);
+      animation: pulseShadow 2s infinite alternate;
+    }
+    @keyframes pulseShadow {
+      0% {
+        box-shadow: 0 0 12px var(--primary);
+      }
+      100% {
+        box-shadow: 0 0 25px var(--accent);
+      }
+    }
+    .form-container h3 {
+      text-align: center;
+      font-size: 1.6em;
+      color: var(--primary);
+      margin-bottom: 1.2em;
+    }
+    .form-group {
+      margin-bottom: 1.5em;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .form-group input {
+      width: 100%;
+      padding: 1em;
+      background: #222;
+      border: 2px solid var(--primary);
+      color: white;
+      border-radius: 10px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+    .form-group input:focus {
+      outline: none;
+      box-shadow: 0 0 12px var(--accent);
+    }
+    .electric-btn {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: none;
+      color: white;
+      padding: 1em 3em;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      box-shadow: var(--glow);
+      transition: transform 0.3s ease;
+    }
+    .electric-btn:hover {
+      transform: scale(1.05);
+    }
+    .forgot-pass {
+      text-align: right;
+      margin-top: -0.5em;
+      margin-bottom: 1.2em;
+    }
+    .forgot-pass a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .forgot-pass a:hover {
+      text-decoration: underline;
+    }
+    .emoji-decor {
+      font-size: 2em;
+      margin-top: 1em;
+      text-shadow: var(--glow);
+    }
+  </style>
+
+
+
+<div class="form-container">
+  <h3>Crear una cuenta</h3>
+  <form id="registerForm" action="register.php" method="POST" onsubmit="return validateRegisterForm(event)">
+    <div class="form-group">
+      <label for="new_username">Nombre de usuario</label>
+      <input type="text" id="new_username" name="username" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="new_password">Contraseña (mínimo 8 caracteres)</label>
+      <input type="password" id="new_password" name="password" required minlength="8" />
+    </div>
+    <div class="form-group">
+      <label for="confirm_password">Repetir contraseña</label>
+      <input type="password" id="confirm_password" required minlength="8" />
+    </div>
+    <div class="form-group">
+      <label for="captcha">¿Cuánto es 3 + 4?</label>
+      <input type="text" id="captcha" required />
+    </div>
+    <div style="text-align: center;">
+      <button type="submit" class="electric-btn">Registrarse</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function validateRegisterForm(event) {
+    event.preventDefault();
+    const password = document.getElementById("new_password").value;
+    const confirm = document.getElementById("confirm_password").value;
+    const captcha = document.getElementById("captcha").value;
+
+    if (password !== confirm) {
+      alert("Las contraseñas no coinciden.");
+      return false;
+    }
+
+    if (captcha.trim() !== "7") {
+      alert("Captcha incorrecto.");
+      return false;
+    }
+
+    // Si pasa validaciones, envía el formulario
+    document.getElementById("registerForm").submit();
+  }
+</script>
+
+
+
+
+
+ </body>
+ </html>
+ 
+ 
+ 
+ 
+
+
+
+
