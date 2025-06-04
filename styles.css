@@ -7,10 +7,15 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #000;
+  /* Remover background: #000; para permitir que Tailwind controle el fondo */
   color: white;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+/* Solo aplicar fondo negro cuando no se especifique otro */
+body:not(.bg-gray-50) {
+  background: #000;
 }
 
 /* Fondo de estrellas animadas */
