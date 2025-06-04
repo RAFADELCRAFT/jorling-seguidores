@@ -6,7 +6,6 @@
     <title>Jorling José Seguidores - Impulsa tu Seguidores Con Ultima Tecnologia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -15,19 +14,471 @@
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
-        /* Sobrescribir el fondo negro del CSS para que sea igual al registro */
+        
+        /* FORZAR fondo gris claro en toda la página */
         body {
             background: #f9fafb !important;
+            font-family: Arial, sans-serif;
             color: #1f2937;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
-        /* Mantener el texto blanco en elementos específicos */
-        .neon-cyan, .pink-text, .white-text, .input-cyan, .btn-gradient {
+        
+        /* Fondo de estrellas animadas */
+        .stars-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(2px 2px at 20px 30px, #ddd, transparent),
+              radial-gradient(2px 2px at 40px 70px, rgba(200, 200, 200, 0.8), transparent),
+              radial-gradient(1px 1px at 90px 40px, #ccc, transparent),
+              radial-gradient(1px 1px at 130px 80px, rgba(180, 180, 180, 0.6), transparent),
+              radial-gradient(2px 2px at 160px 30px, #bbb, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 3s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes sparkle {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-100px);
+            }
+        }
+
+        /* Header y navegación */
+        header {
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+            background: transparent;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .menu-item {
+            color: #ff00ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .menu-item:hover {
+            text-shadow: 0 0 5px #ff00ff;
+        }
+
+        /* Contenido principal */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+            background: transparent;
+        }
+
+        /* Sección hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 32px;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        /* Emojis animados */
+        .emojis {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            font-size: 2rem;
+            margin-bottom: 48px;
+        }
+
+        .emoji-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .emoji-float:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        .emoji-float:nth-child(3) {
+            animation-delay: 1s;
+        }
+        .emoji-float:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+        .emoji-float:nth-child(5) {
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Formulario de login */
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .gradient-border {
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+            padding: 2px;
+            border-radius: 20px;
+        }
+
+        .gradient-border-inner {
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 18px;
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .input-cyan {
+            background: transparent;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
+            padding: 12px 16px;
             color: white;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s ease;
         }
-        /* Asegurar que las secciones mantengan el fondo oscuro */
-        .gradient-border-inner, .stats-section, .why-us-section, .contact-section, footer {
+
+        .input-cyan:focus {
+            box-shadow: 0 0 10px #00ffff;
+            border-color: #00ffff;
+        }
+
+        .input-cyan::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(45deg, #ff00ff, #ff69b4);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 40px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.4);
+        }
+
+        .text-center {
+            text-align: center;
+            margin: 16px 0;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        /* Estilos de texto */
+        .neon-cyan {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+            text-align: center;
+        }
+
+        .pink-text {
+            color: #ff00ff;
+        }
+
+        .link-cyan {
+            color: #00ffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .link-cyan:hover {
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        .link-blue {
+            color: #4169e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .link-blue:hover {
+            text-shadow: 0 0 5px #4169e1;
+        }
+
+        /* Mensajes de error */
+        .error-message {
+            color: #ff4d4d;
+            text-align: center;
+            margin: 10px 0;
+            min-height: 20px;
+        }
+
+        /* Estadísticas */
+        .stats-section {
+            width: 100%;
+            padding: 50px 0;
             background: rgba(0, 0, 0, 0.9);
             color: white;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #ccc;
+        }
+
+        /* Por qué elegirnos */
+        .why-us-section {
+            width: 100%;
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1);
+            border-color: #00ffff;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+
+        .feature-desc {
+            color: #ccc;
+        }
+
+        /* Contacto */
+        .contact-section {
+            width: 100%;
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+        }
+
+        .whatsapp-btn:hover {
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .telegram-btn {
+            background: linear-gradient(45deg, #0088cc, #0077b5);
+        }
+
+        .telegram-btn:hover {
+            box-shadow: 0 0 15px rgba(0, 136, 204, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            color: white;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00ffff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-bottom p {
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
