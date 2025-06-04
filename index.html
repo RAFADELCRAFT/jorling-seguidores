@@ -1,210 +1,195 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jorling José Seguidores </title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0f0f0f;
-      --card-bg: #1a1a1a;
-      --primary: #00f0ff;
-      --accent: #ff00c8;
-      --glow: 0 0 10px var(--primary), 0 0 20px var(--accent);
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: var(--bg);
-      color: white;
-    }
-    header {
-      background: #111;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em 2em;
-      box-shadow: 0 0 15px var(--primary);
-    }
-    header h1 {
-      font-size: 1.8em;
-      color: var(--primary);
-      text-shadow: var(--glow);
-    }
-    nav a {
-      color: var(--accent);
-      margin-left: 1.5em;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: white;
-    }
-    .hero {
-      text-align: center;
-      padding: 5em 2em;
-      background: linear-gradient(to right, #010203, #121212);
-    }
-    .hero h2 {
-      font-size: 2.8em;
-      color: var(--primary);
-      text-shadow: var(--glow);
-    }
-    .hero p {
-      font-size: 1.2em;
-      margin-top: 1em;
-      color: #ccc;
-    }
-    .form-container {
-      background: var(--card-bg);
-      border-radius: 15px;
-      max-width: 520px;
-      margin: 3em auto;
-      padding: 2em;
-      box-shadow: var(--glow);
-      animation: pulseShadow 2s infinite alternate;
-    }
-    @keyframes pulseShadow {
-      0% {
-        box-shadow: 0 0 12px var(--primary);
-      }
-      100% {
-        box-shadow: 0 0 25px var(--accent);
-      }
-    }
-    .form-container h3 {
-      text-align: center;
-      font-size: 1.6em;
-      color: var(--primary);
-      margin-bottom: 1.2em;
-    }
-    .form-group {
-      margin-bottom: 1.5em;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5em;
-      font-weight: bold;
-      color: var(--accent);
-    }
-    .form-group input {
-      width: 100%;
-      padding: 1em;
-      background: #222;
-      border: 2px solid var(--primary);
-      color: white;
-      border-radius: 10px;
-      font-size: 1em;
-      transition: all 0.3s ease;
-    }
-    .form-group input:focus {
-      outline: none;
-      box-shadow: 0 0 12px var(--accent);
-    }
-    .electric-btn {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border: none;
-      color: white;
-      padding: 1em 3em;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 1em;
-      font-weight: bold;
-      box-shadow: var(--glow);
-      transition: transform 0.3s ease;
-    }
-    .electric-btn:hover {
-      transform: scale(1.05);
-    }
-    .forgot-pass {
-      text-align: right;
-      margin-top: -0.5em;
-      margin-bottom: 1.2em;
-    }
-    .forgot-pass a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-    .forgot-pass a:hover {
-      text-decoration: underline;
-    }
-    .emoji-decor {
-      font-size: 2em;
-      margin-top: 1em;
-      text-shadow: var(--glow);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorling José Seguidores - Impulsa tu Seguidores Con Ultima Tecnologia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Jorling José Seguidores </h1>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Servicios</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </header>
-  <div class="hero">
-    <h2>Impulsa tu Seguidores Con Ultima Tecnologia</h2>
-    <p>Domina las redes sociales con el poder de Jorling José Seguidores</p>
-    <div class="emoji-decor">⚡🤖🚀📱💥</div>
-  </div>
-  <div class="form-container">
-    <h3>Iniciar sesión</h3>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Fondo de estrellas -->
+    <div class="stars-bg"></div>
 
+    <!-- Header -->
+    <header>
+        <nav>
+            <h1 class="neon-cyan">Jorling José Seguidores</h1>
+            <div class="menu">
+                <a href="index.html" class="menu-item">Inicio</a>
+                <a href="#servicios" class="menu-item">Servicios</a>
+                <a href="#contacto" class="menu-item">Contacto</a>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Contenido principal -->
+    <main>
+        <!-- Título principal -->
+        <div class="hero">
+            <h2 class="neon-cyan">Impulsa tu Seguidores Con Ultima Tecnologia</h2>
+            <p class="subtitle">Domina las redes sociales con el poder de Jorling José Seguidores</p>
+            
+            <!-- Emojis animados -->
+            <div class="emojis">
+                <span class="emoji-float">⚡</span>
+                <span class="emoji-float">👾</span>
+                <span class="emoji-float">🚀</span>
+                <span class="emoji-float">📱</span>
+                <span class="emoji-float">💥</span>
+            </div>
+        </div>
 
+        <!-- Formulario de login -->
+        <div class="login-container">
+            <div class="gradient-border">
+                <div class="gradient-border-inner">
+                    <h3 class="neon-cyan">Iniciar sesión</h3>
+                    
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label class="pink-text">Nombre de usuario</label>
+                            <input type="text" id="username" class="input-cyan" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="pink-text">Clave</label>
+                            <input type="password" id="password" class="input-cyan" required>
+                        </div>
+                        
+                        <div id="errorMessage" class="error-message"></div>
+                        
+                        <div class="text-center">
+                            <a href="forgot-password.html" class="link-cyan">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn-gradient">Entrar</button>
+                    </form>
+                    
+                    <div class="register-link">
+                        <a href="register.html" class="link-blue">¿No tienes cuenta? Crear Nueva Cuenta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
+    <script src="auth.js"></script>
 
-    <form action="login.php" method="POST">
-  <div class="form-group">
-    <label for="username">Nombre de usuario</label>
-    <input type="text" id="username" name="username" required />
-  </div>
-  <div class="form-group">
-    <label for="password">Clave</label>
-    <input type="password" id="password" name="password" required />
-  </div>
-  <div class="forgot-pass">
-    <a href="#">¿Olvidaste tu contraseña?</a>
-  </div>
-  <div style="text-align: center;">
-    <button type="submit" class="electric-btn">Entrar</button>
-  </div>
-</form>
+    <!-- Estadísticas -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number neon-cyan">24,425</div>
+                <div class="stat-label">Total de usuarios</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number neon-cyan">2,345,921</div>
+                <div class="stat-label">Pedidos entregados</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number neon-cyan">7,034</div>
+                <div class="stat-label">Tickets totales</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number neon-cyan">4,513</div>
+                <div class="stat-label">Servicios totales</div>
+            </div>
+        </div>
+    </section>
 
-<br>
-<br>
-<br>
+    <!-- Por qué elegirnos -->
+    <section id="servicios" class="why-us-section">
+        <h2 class="section-title neon-cyan">¿Por qué elegirnos?</h2>
+        
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Entrega Rápida</h3>
+                <p class="feature-desc">Nuestros servicios se entregan en tiempo récord, sin demoras.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">100% Seguro</h3>
+                <p class="feature-desc">No necesitamos tu contraseña, solo tu nombre de usuario.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💯</div>
+                <h3 class="feature-title">Alta Calidad</h3>
+                <p class="feature-desc">Seguidores reales y activos para todas tus redes sociales.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">Soporte 24/7</h3>
+                <p class="feature-desc">Estamos disponibles para ayudarte en cualquier momento.</p>
+            </div>
+        </div>
+    </section>
 
-<a href="registro.html">Eres Nuevo Crear Nueva Cuenta</a>
+    <!-- Contacto -->
+    <section id="contacto" class="contact-section">
+        <h2 class="section-title neon-cyan">Contáctanos</h2>
+        
+        <div class="contact-buttons">
+            <a href="https://wa.me/573234135603" target="_blank" class="contact-btn whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://wa.me/573150233701" target="_blank" class="contact-btn whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp Alternativo
+            </a>
+            <a href="https://t.me/Jorlingseguidores" target="_blank" class="contact-btn telegram-btn">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3 class="neon-cyan">Jorling José Seguidores</h3>
+                <p>Tu mejor opción para crecer en redes sociales</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
+                <a href="register.html">Registro</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jorling José Seguidores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-  </div>
-  <script>
-    function loginUser(event) {
-      event.preventDefault();
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      if (username === "admin" && password === "1234") {
-        alert("¡Bienvenido, " + username + "!");
-      } else {
-        alert("Credenciales incorrectas. Intenta nuevamente.");
-      }
-    }
-
-    function forgotPassword() {
-      const email = prompt("Introduce tu correo electrónico para recuperar tu contraseña:");
-      if (email) {
-        alert("Se ha enviado un correo de recuperación a " + email);
-      }
-    }
-  </script>
+    <!-- Smooth Scrolling Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
