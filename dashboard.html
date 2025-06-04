@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Jorling José Seguidores</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo de estrellas -->
+    <div class="stars-bg"></div>
+
+    <!-- Header -->
+    <header class="dashboard-header">
+        <nav>
+            <h1 class="neon-cyan">Jorling José Seguidores</h1>
+            <div class="menu">
+                <span id="welcomeMessage" class="pink-text">Bienvenido, </span>
+                <span id="userBalance" class="balance-display">Saldo: $0.00</span>
+                <button id="logoutBtn" class="btn-gradient btn-small">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="dashboard-main">
+        <!-- Selector de servicios -->
+        <div class="service-selector">
+            <div class="gradient-border">
+                <div class="gradient-border-inner">
+                    <h3 class="neon-cyan">Selecciona un servicio</h3>
+                    
+                    <div class="service-tabs">
+                        <button class="service-tab active" data-service="followers">Seguidores</button>
+                        <button class="service-tab" data-service="views">Visualizaciones</button>
+                        <button class="service-tab" data-service="likes">Likes</button>
+                        <button class="service-tab" data-service="comments">Comentarios</button>
+                    </div>
+                    
+                    <div class="platform-selector">
+                        <label class="pink-text">Selecciona plataforma:</label>
+                        <select id="platformSelect" class="input-cyan">
+                            <option value="instagram">Instagram</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="twitter">Twitter (X)</option>
+                            <option value="whatsapp">WhatsApp Grupos</option>
+                        </select>
+                    </div>
+                    
+                    <div id="serviceOptions" class="service-options">
+                        <!-- Las opciones se cargarán dinámicamente con JavaScript -->
+                    </div>
+                    
+                    <div class="order-form">
+                        <div class="form-group">
+                            <label class="pink-text">Tu usuario/enlace:</label>
+                            <input type="text" id="targetUsername" class="input-cyan" placeholder="@usuario o enlace" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="pink-text">Cantidad:</label>
+                            <input type="number" id="orderQuantity" class="input-cyan" min="100" value="1000" required>
+                        </div>
+                        
+                        <div class="order-summary">
+                            <p>Precio: <span id="orderPrice" class="neon-cyan">$0.00</span></p>
+                        </div>
+                        
+                        <div id="orderError" class="error-message"></div>
+                        
+                        <button id="placeOrderBtn" class="btn-gradient">Realizar Pedido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historial de pedidos -->
+        <div class="orders-section">
+            <div class="gradient-border">
+                <div class="gradient-border-inner">
+                    <h3 class="neon-cyan">📋 Mis Pedidos</h3>
+                    <div id="ordersContainer" class="orders-container">
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Servicio</th>
+                                    <th>Plataforma</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody">
+                                <!-- Los pedidos se cargarán dinámicamente -->
+                            </tbody>
+                        </table>
+                        <p id="noOrdersMessage" class="empty-orders">No tienes pedidos aún. ¡Haz tu primera compra!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contacto -->
+        <div class="dashboard-contact">
+            <div class="gradient-border">
+                <div class="gradient-border-inner">
+                    <h3 class="neon-cyan">¿Necesitas ayuda?</h3>
+                    <p class="subtitle">Contáctanos para recargar tu saldo o resolver dudas</p>
+                    
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/573234135603" target="_blank" class="contact-btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://wa.me/573150233701" target="_blank" class="contact-btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Alternativo
+                        </a>
+                        <a href="https://t.me/Jorlingseguidores" target="_blank" class="contact-btn telegram-btn">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3 class="neon-cyan">Jorling José Seguidores</h3>
+                <p>Tu mejor opción para crecer en redes sociales</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#top">Inicio</a>
+                <a href="#top">Servicios</a>
+                <a href="#top">Contacto</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jorling José Seguidores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
