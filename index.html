@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jorling José Seguidores - Impulsa tu Seguidores Con Ultima Tecnologia</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .form-focus:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        /* Sobrescribir el fondo negro del CSS para que sea igual al registro */
+        body {
+            background: #f9fafb !important;
+            color: #1f2937;
+        }
+        /* Mantener el texto blanco en elementos específicos */
+        .neon-cyan, .pink-text, .white-text, .input-cyan, .btn-gradient {
+            color: white;
+        }
+        /* Asegurar que las secciones mantengan el fondo oscuro */
+        .gradient-border-inner, .stats-section, .why-us-section, .contact-section, footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
         }
     </style>
 </head>
